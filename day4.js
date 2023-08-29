@@ -141,34 +141,47 @@
 // }
 // console.log(twoSum([2,6,7,8],9));
 
-let twoSum = function(nums,target){
-    let map = {}
-     for(let i = 0; i < nums.length; i++){
-       let value = nums[i]
-       let compliment = target - value;
-       if(map[compliment] === undefined) map[value] = i
-       else return [map[compliment], i]
-     }
-}
-console.log(twoSum([2,6,7,8],9));
+// let twoSum = function(nums,target){
+//     let map = {}
+//      for(let i = 0; i < nums.length; i++){
+//        let value = nums[i]
+//        let compliment = target - value;
+//        if(map[compliment] === undefined) map[value] = i
+//        else return [map[compliment], i]
+//      }
+// }
+// console.log(twoSum([2,6,7,8],9));
 
-//question
-//remove duplicates
+// //question
+// //remove duplicates
 
-let removeDuplicates = function(nums){
-    let  i = 0
-    for(let j = 0; j< nums.length; j++){
-    if(nums[i] !== nums[j]){
-        i++
-        nums[i] = nums[j]
+// let removeDuplicates = function(nums){
+//     let  i = 0
+//     for(let j = 0; j< nums.length; j++){
+//     if(nums[i] !== nums[j]){
+//         i++
+//         nums[i] = nums[j]
 
-    }
+//     }
     
- }
- for(let j = i+ 1; j < nums.length; j++){
-    nums[j] = null 
- }
- return i + 1
-}
+//  }
+//  for(let j = i+ 1; j < nums.length; j++){
+//     nums[j] = null 
+//  }
+//  return i + 1
+// }
 
-console.log(removeDuplicates([0,0,1,1,2,2,3,3,4]))
+// console.log(removeDuplicates([0,0,1,1,2,2,3,3,4]))
+
+var mergeTwoLists = function(list1, list2) {
+    const output = [...list1, ...list2];
+    output.sort(function(a,b) {return a -b})
+
+    // if(list1.length === 0 && list2.length === 0){
+    //     return output.length === 0
+    // }
+    return output;
+};
+console.log(mergeTwoLists([1,2,4],[1,3,4]))
+console.log(mergeTwoLists([],[]))
+console.log(mergeTwoLists([],[0]))
