@@ -149,23 +149,23 @@
 // };
 //console.log(findMin([7,8,9,1,2,3]))
 
-// function findPivot(arr) {
-//     let left = 0;
-//     let right = arr.length - 1;
+function findPivot(arr) {
+    let left = 0;
+    let right = arr.length - 1;
   
-//     while (left < right) {
-//       const mid = Math.floor((left + right) / 2);
+    while (left < right) {
+      const mid = Math.floor((left + right) / 2);
   
-//       if (arr[mid] > arr[right]) {
-//         left = mid + 1;
-//       } else {
-//         right = mid;
-//       }
-//     }
+      if (arr[mid] > arr[right]) {
+        left = mid + 1;
+      } else {
+        right = mid;
+      }
+    }
   
-//     // When the loop exits, 'left' will point to the pivot element.
-//     return arr[left];
-//   }
+    // When the loop exits, 'left' will point to the pivot element.
+    return arr[left];
+  }
   
 //   // Example usage:
 //   const rotatedArray = [7,9,1,2,3];
