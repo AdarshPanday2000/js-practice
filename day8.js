@@ -102,3 +102,50 @@
 //     return matrix;
 //   }
 //   console.log(createMatrix(3,4))
+
+
+// var isPalindrome = function(n) {
+//     // var s = x.toString();
+//     // var t = s.split("").reverse().join("");
+//     // return s === t;
+//     if(n < 0) return 0;
+    
+//     let dup = n
+//     let revNum = 0
+//     while(n > 0){
+//         lastDigit = n % 10
+//         n = Math.trunc(n/10)
+//         revNum = (revNum * 10) + lastDigit
+//     }
+//     if(revNum == dup){
+//         return 1;
+//     } else return 0;
+// };
+
+// console.log(isPalindrome(10))
+
+//arr= [0,3,45,6,4]
+
+// let secondLargest = function search(arr){
+//     if (arr.length == 1) {
+//         return -1;
+//     }
+//    let reverseArr =  arr.sort(function(a,b) {return b-a} )
+//     return reverseArr[1];
+// };
+// console.log(secondLargest([0,3,45,6,4]));
+
+// console.log(secondLargest([1,1,1,1,1]));
+// console.log(secondLargest([1]));
+
+let largestnNum = function search(arr){
+    let count = arr[0]
+    for(let i = 1; i < arr.length; i++){
+        if(arr[i]> count){
+           count = arr[i];
+        }
+    }
+    return count;
+}
+console.log(largestnNum([0,3,45,6,4,50]));
+
