@@ -138,14 +138,36 @@
 // console.log(secondLargest([1,1,1,1,1]));
 // console.log(secondLargest([1]));
 
-let largestnNum = function search(arr){
-    let count = arr[0]
-    for(let i = 1; i < arr.length; i++){
-        if(arr[i]> count){
-           count = arr[i];
-        }
-    }
-    return count;
-}
-console.log(largestnNum([0,3,45,6,4,50]));
+// let largestnNum = function search(arr){
+//     let count = arr[0]
+//     for(let i = 1; i < arr.length; i++){
+//         if(arr[i]> count){
+//            count = arr[i];
+//         }
+//     }
+//     return count;
+// }
+// console.log(largestnNum([0,3,45,6,4,50]));
 
+// let count = 0
+// const name = function(n){
+//     if(count == n) return;
+//     console.log("adarsh");
+//     count++
+//     name(n);
+// }
+// name(5)
+
+// let printNumbers = function (i,n){
+//     if(i > n) return;
+//     console.log(i)
+//     printNumbers(i+1,n)
+// }
+// printNumbers(1,10)
+
+// let printNumber = function(n){
+//   for(let i = 1; i<=n; i++){
+//     console.log(i)
+//   }
+// }
+// printNumber(10);
