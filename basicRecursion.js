@@ -173,6 +173,22 @@
 // }
 // console.log(count([1,2,3,12,1,2,3],3))
 
+// function missingNumber(arr){
+//    let n = arr.length
+//    let hash = new Array(n+1)
+//    hash.fill(0);
+   
+//    for(let i = 0; i< n-1; i++){
+//     hash[arr[i]] = 1
+//    }
+//    for(let i = 0; i< n; i++){
+//     if(hash[i] == 0){
+//         return i;
+//     }
+//    }
+// }
+// console.log(missingNumber([0,1,2,4,5,6,3,7,9]));
+
 
 // let stringCount = function(str,target){
 //    let newArr = str.split('')
