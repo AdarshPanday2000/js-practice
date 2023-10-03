@@ -162,6 +162,7 @@
 // }
 // console.log(fibonacci(4));
 
+//hashing
 // let count = function(arr,target){
 //     let hashArr = new Array( Math.max(...arr)+1)
 //     hashArr.fill(0);
@@ -172,6 +173,23 @@
 //     return hashArr[target];
 // }
 // console.log(count([1,2,3,12,1,2,3],3))
+
+// function majorElement (arr){
+//     let n =arr.length
+//     let hash = new Array(Math.max(...arr)+1)
+//     hash.fill(0);
+
+//     for(let i =0; i< n; i++){
+//         hash[arr[i]]++
+//     }
+//     for(let i=0; i<hash.length; i++){
+//         if(hash[i] > n/2){
+//             return i;
+//         }
+//     }
+// }
+// console.log(majorElement([2,2,3,3,1,2,2]));
+// console.log(majorElement([1,1,2,2,3,3,3,3,3]))
 
 // function missingNumber(arr){
 //    let n = arr.length
@@ -201,6 +219,21 @@
 //    return hashArr[target];
 // }
 // console.log(stringCount('adarsh','a'));
+
+// function singleNumber (arr){
+//     let n =arr.length
+//     let hash = new Array(Math.max(...arr)+1)
+//     hash.fill(0)
+//     for(let i = 0; i<= n; i++){
+//         hash[arr[i]]++
+//     }
+//     for(let i = 0; i<= n; i++){
+//         if(hash[arr[i]] == 1){
+//             return arr[i];
+//         }
+//     }
+// }
+// console.log(singleNumber([1,1,2,2,3,4,4]))
 
 //merge sorting
 //  let merge = function(arr,low,mid,high){

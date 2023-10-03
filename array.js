@@ -89,19 +89,102 @@
 //[1,2,3,4,5,6,7] , d=3
 //op = [5,6,7,1,2,3,4]
 
-function rotate(arr,s,e){
-    while(s<e){
-        [arr[s],arr[e]] = [arr[e],arr[s]]
-        s++
-        e--
-    }
-    return arr;
-}
-function rightRotate(arr,d){
-    let n = arr.length
-    rotate(arr,n-d,arr.length-1);
-    rotate(arr,0,n-d-1);
-    rotate(arr,0,arr.length-1)
-    return arr;
-}
-console.log(rightRotate([1,2,3,4,5,6,7,8,9],4))
+// function rotate(arr,s,e){
+//     while(s<e){
+//         [arr[s],arr[e]] = [arr[e],arr[s]]
+//         s++
+//         e--
+//     }
+//     return arr;
+// }
+// function rightRotate(arr,d){
+//     let n = arr.length
+//     rotate(arr,n-d,arr.length-1);
+//     rotate(arr,0,n-d-1);
+//     rotate(arr,0,arr.length-1)
+//     return arr;
+// }
+// console.log(rightRotate([1,2,3,4,5,6,7,8,9],4))
+
+
+//sort array of 0,1,2
+//[0,1,2,0,1,2,0,1,0,2]
+// var sortColors = function(nums) {
+//     let n = nums.length
+//     let count0 = 0
+//     let count1 = 0
+//     let count2 = 0;
+//     for(let i = 0; i< n; i++){
+//         if(nums[i] == 0) count0++;
+//         else if(nums[i] == 1) count1++;
+//         else count2++;
+//     }
+//     for(let i = 0; i<count0; i++){
+//         nums[i] = 0
+//     }
+//     for(let i = count0; i< count0+count1; i++){
+//         nums[i] = 1
+//     }
+//     for(let i = count0+count1; i< n; i++){
+//         nums[i] = 2;
+//     }
+//     return nums;
+// };
+// console.log(sortColors([0,1,2,0,1,2,0,1,0,2]));
+
+// var sortColors = function(nums) {
+//     let n = nums.length
+//     let low = 0
+//     let mid = 0
+//     let high = n-1
+
+//     while(mid < high){
+//         if(nums[mid] == 0){
+//             [nums[low],nums[mid]] = [nums[mid],nums[low]]
+//             low++
+//             mid++;
+//         }
+//         else if(nums[mid] == 1){
+//             mid++;
+//         }
+//         else{
+//             [nums[mid],nums[high]] = [nums[high],nums[mid]]
+//             high-- ;
+//         }
+//     }
+// };
+
+
+// buy and sell stocks 
+// var maxProfit = function(prices) {
+//     let n = prices.length
+//     let minimum = prices[0]
+//     let profit = 0
+//     for(let i = 1; i< n; i++){
+//         let cost = prices[i] - minimum;
+//         profit = Math.max(cost,profit);
+//         minimum = Math.min(minimum,prices[i])
+//     }
+//     return profit;
+// };
+
+//leaders in an array
+//[10,22,12,3,0,6]
+//ans = [22,12,6]
+
+// function leaders(arr){
+//     let ans = []
+//     let max = -Infinity
+//     let n = arr.length
+
+//     for(let i = n-1; i >= 0; i--){
+//         if(arr[i] > max){
+//             ans.push(arr[i])
+//         }
+//         max = Math.max(arr[i], max)
+//     }
+//     return ans;
+// }
+// console.log(leaders([10,22,12,3,0,6]))
+
+
