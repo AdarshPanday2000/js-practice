@@ -588,21 +588,41 @@
 // }
 // console.log(numberOnce([1,1,2,2,3,4,4]))
 
+// function checkSorted(arr){
+//     let count = 0
+//     let n = arr.length
+//     if(arr[0] < arr[n-1]) count++;
+//     for(let i = 1; i< n; i++){
+//         if(arr[i] > arr[i-1]){
 
-function longestSubarray(arr,k){
-    // let length = 0
-    // for(let i = 0; i< arr.length ; i++){
-    //     let sum = 0
-    //     for(let j = i; j< arr.length; j++){
-    //         sum += arr[j]
-    //         if(sum ===  k){
-    //             length = Math.max(length, j-i+1);
-    //         }
-    //     }
-    // }
-    // return length;
+//         }else{
+//             count++
+//         }
+//     }
+//     if(count < 2) return true;
+//     else return false;
+// }
+// console.log(checkSorted([3,4,2,1,5]))
+
+// function longestSubarray(arr,k){
+//     // let length = 0
+//     // for(let i = 0; i< arr.length ; i++){
+//     //     let sum = 0
+//     //     for(let j = i; j< arr.length; j++){
+//     //         sum += arr[j]
+//     //         if(sum ===  k){
+//     //             length = Math.max(length, j-i+1);
+//     //         }
+//     //     }
+//     // }
+//     // return length;
 
     
-}
-console.log(longestSubarray([2,3,5,1,9],10))
+// }
+// console.log(longestSubarray([2,3,5,1,9],10))
+
+
+ 
+// input= 'hello world
+//output = 'world hello
 
