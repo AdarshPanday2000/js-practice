@@ -626,3 +626,146 @@
 // input= 'hello world
 //output = 'world hello
 
+//[7,15,6,3]
+// function bananas(arr,numBananas){
+//     let n = arr.length
+//     let totalHrs = 0
+//     for(let i = 0; i<n ; i++){
+//         totalHrs += Math.ceil((arr[i]/numBananas))
+//     }
+//     return totalHrs;
+// }
+
+// function minimumRateToEatBananas(arr, h) {
+//     // let n = arr.length
+//     // let hours; 
+//     // for(let  i = 1; i <= Math.max(...arr); i++){
+//     //     hours = bananas(arr,i)
+//     //     if(hours <= h){
+//     //         return i;
+//     //     }
+//     // }
+
+//     let n = arr.length
+//     let low = 1
+//     let high = Math.max(...arr)
+//     let hours;
+//     while(low <= high){
+//         let mid = Math.floor((low+high)/2)
+//         hours = bananas(arr,mid)
+//         if(hours <= h){
+//             high = mid-1
+//         } else{
+//             low = mid+1
+//         }
+//     }
+//     return low;
+// }
+// console.log(minimumRateToEatBananas([7,15,6,3],8))
+
+
+//arr = [10, 22, 12, 3, 0, 6]
+// function leader(arr){
+//     let n = arr.length
+//     let ans = [arr[n-1]]
+//     let res = arr[n-1]
+//     for(let i = n-2; i>= 0 ; i--){
+//         if(arr[i] > res){
+//          ans.push(arr[i])
+//          res = arr[i]
+//         } 
+//     }
+//     return ans;
+// }
+// console.log(leader([10,22,12,3,0,6]))
+
+//array[] = {3,1,2,4}, k = 6
+//function sumSubarray(arr,k){
+    // let n = arr.length 
+    // let res = 0
+    // for(let i = 0; i<n ; i++){
+    //     let sum = 0
+    //     for(let j = i; j<n ; j++){
+    //         sum += arr[j]
+    //         if(sum === k){
+    //             res++
+    //         }
+    //     }
+    // }
+    // return res;
+
+
+    //////////////////hash map //////////////////////////////
+//     let map = {0:1}
+//     let sum = 0
+//     let count = 0
+//     for(let i = 0 ; i <arr.length ; i++){
+//         sum += arr[i]
+//         if(map[sum-k]){
+//             count += map[sum-k]
+//         }
+//         if(map[sum]){
+//             map[sum] += 1
+//         } else{
+//             map[sum] = 1
+//         }
+//     }
+//     return count;
+// }
+// console.log(sumSubarray([3,1,2,4],6));
+//////////////////////////////////////////////////////////////
+
+// function maximumOnes(matrix){
+//     let n = matrix.length
+//     let m = matrix[0].length
+
+//     let index = -1
+//     let maxCount = -1
+//     for(let i = 0; i<n; i++){
+//         let countRow = 0
+//         for(let j = 0; j< m; j++){
+//             countRow += matrix[i][j]
+//         }
+//         if(countRow > maxCount){
+//             maxCount = countRow
+//             index = i;
+//         }
+//     }
+//     return index;
+// }
+// console.log(maximumOnes([[0,0,1,1,1],[0,0,0,0,0],[0,1,1,1,1]]))
+
+
+function lowerBound(arr,k){
+    let n = arr.length
+    let low = 0
+    let high = n-1
+    let ans = n
+    while(low <= high){
+        let mid = Math.floor((low+high)/2)
+        if(arr[mid] >= k){
+            ans = mid
+            high = mid-1
+        } else{
+            low = mid+1
+        }
+    }
+    return ans;
+}
+
+function maximumOnes(matrix){
+    let n = matrix.length
+    let m = matrix[0].length
+    let index = -1
+    let countMax = 0
+    for(let i = 0 ; i < n; i++){
+        let countOnes = m - lowerBound(matrix[i],1)
+        if(countOnes > countMax){
+            countMax = countOnes
+            index = i
+        }
+    }
+    return index;
+}
+console.log(maximumOnes([[0,0,1,1,1],[0,0,0,0,0],[0,1,1,1,1]]))
+
