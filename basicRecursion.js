@@ -302,3 +302,25 @@
 
 // }
 // console.log(leftRotate([1,2,3,4,5,6,7],3));
+
+var subsetsWithDup = function(nums) {
+    let n = nums.length
+    let res = []
+
+    function recursion(nums,temp,index,res){
+        res.push([...temp])
+        for(let i = index ; i < n; i++){
+            if(i !== index && nums[i] == nums[i-1]) continue;
+            temp.push(nums[i])
+            recursion(i+1, temp , nums,res)
+            temp.pop()
+        }
+    }
+    nums.sort((a,b) => {return b -a})
+    recursion(nums,[],0,res)
+    return res;
+};
+
+console.log(subsetsWithDup([1,2,2]))
+
+

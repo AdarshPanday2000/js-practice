@@ -736,36 +736,345 @@
 // console.log(maximumOnes([[0,0,1,1,1],[0,0,0,0,0],[0,1,1,1,1]]))
 
 
+// function lowerBound(arr,k){
+//     let n = arr.length
+//     let low = 0
+//     let high = n-1
+//     let ans = n
+//     while(low <= high){
+//         let mid = Math.floor((low+high)/2)
+//         if(arr[mid] >= k){
+//             ans = mid
+//             high = mid-1
+//         } else{
+//             low = mid+1
+//         }
+//     }
+//     return ans;
+// }
+
+// function maximumOnes(matrix){
+//     let n = matrix.length
+//     let m = matrix[0].length
+//     let index = -1
+//     let countMax = 0
+//     for(let i = 0 ; i < n; i++){
+//         let countOnes = m - lowerBound(matrix[i],1)
+//         if(countOnes > countMax){
+//             countMax = countOnes
+//             index = i
+//         }
+//     }
+//     return index;
+// }
+// console.log(maximumOnes([[0,0,1,1,1],[0,0,0,0,0],[0,1,1,1,1]]))
+
+
+//[0,1,2,4,5,8,9,10], k = 7 , arr[mid] >= k
 function lowerBound(arr,k){
     let n = arr.length
     let low = 0
     let high = n-1
-    let ans = n
+
     while(low <= high){
-        let mid = Math.floor((low+high)/2)
+        let mid = Math.floor((low+high) / 2)
         if(arr[mid] >= k){
-            ans = mid
-            high = mid-1
-        } else{
-            low = mid+1
+            high = mid -1
+        } 
+        else{
+            low = mid +1
         }
     }
-    return ans;
+    return low;
 }
 
-function maximumOnes(matrix){
-    let n = matrix.length
-    let m = matrix[0].length
-    let index = -1
-    let countMax = 0
-    for(let i = 0 ; i < n; i++){
-        let countOnes = m - lowerBound(matrix[i],1)
-        if(countOnes > countMax){
-            countMax = countOnes
-            index = i
+function upperBound(arr,k){
+    let n = arr.length
+    let low = 0
+    let high = n-1
+
+    while(low <= high){
+        let mid = Math.floor((low+high) / 2)
+        if(arr[mid] > k){
+            high = mid -1
+        } 
+        else{
+            low = mid +1
         }
     }
-    return index;
+    return low;
 }
-console.log(maximumOnes([[0,0,1,1,1],[0,0,0,0,0],[0,1,1,1,1]]))
+// console.log(lowerBound([0,1,2,4,5,8,9,10],8))
+// console.log(upperBound([0,1,2,4,5,8,9,10],8))
+
+//[3,4,13,13,13,20,40],k=13
+// function findIndex(arr,k){
+//     let leftIndex = lowerBound(arr,k)
+//     let rightIndex = upperBound(arr,k)
+//    // return [leftIndex,rightIndex-1]
+//    if(arr[leftIndex] !== k) return -1;
+//     return rightIndex-leftIndex
+//}
+// console.log(findIndex([3,4,13,13,13,20,40],2))
+
+
+//search in a rotated ARRAY
+// function searchIndex (arr,k){
+//     let n = arr.length
+//     let low = 0
+//     let high = n-1
+
+//     while(low <= high){
+//         let mid = Math.floor((low+high)/2)
+//         if(arr[mid] == k){
+//             return mid
+//         }
+//         else if(arr[low] <= arr[mid]){
+//                 if(k >= arr[low] && k <= arr[mid]){
+//                     high = mid -1
+//                 }else{
+//                     low = mid +1
+//                 }
+//             }
+//         else {
+//             if(arr[mid] <= k && arr[high] > k){
+//                 high = mid -1
+//             }else{
+//                 low = mid +1
+//             }
+//         }    
+//      }
+//      return -1;
+// };
+// console.log(searchIndex([4,5,6,7,0,1,2,3], 0))
+
+//minimum el in array
+//[3,4,5,1,2]
+
+// function minElement (arr){
+//     let low = 0
+//     let high = arr.length -1
+//     let ans = Infinity
+//     while(low <= high){
+//         let mid = Math.floor((low+high)/2)
+
+//         //check if left half is sorted
+//         if(arr[low] <= arr[mid]){
+//             ans = Math.min(ans,arr[low]) // lowest value in ans
+//             low = mid +1
+//         }
+//         else{
+//             ans = Math.min(ans,arr[mid])
+//             high = mid -1
+//         }
+//     }
+//     return ans;
+// }
+//console.log(minElement([3,4,5,0,1,2]))
+
+// function minElementIndex(arr){
+//     let low = 0
+//     let high = arr.length -1
+//     let ans = Infinity
+//     let index = -1
+//     while(low <= high){
+//         let mid = Math.floor((low+high)/2)
+
+//         //check if left half is sorted
+//         if(arr[low] <= arr[mid]){
+//             if(arr[low] < ans){
+//                 ans = arr[low]
+//                 index = low
+//             }
+//             low = mid +1
+//         }
+//         else{
+//             if(arr[mid] < ans){
+//                 ans = arr[mid]
+//                 index = mid
+//             }
+//             high = mid -1
+//         }
+//     }
+//     return index;
+// }
+// console.log(minElementIndex([3,4,5,1,2]))
+
+
+// function L(m,n){
+//    return m**n
+// }
+// function nRoot(m,n){
+//     let low = 1
+//     let high = m
+
+//     while(low <= high){
+//         let mid = Math.floor((low+high)/2)
+//         if(L(mid,n) === m){
+//             return mid;
+//         }
+//         else if(L(mid,n) > m){
+//             high = mid -1
+//         }
+//         else{
+//             low = mid +1
+//         }
+//     }
+//     return -1;
+// }
+// console.log(nRoot(27,3))
+
+
+//koko eating banana
+// function L(arr,h){
+//     let res = 0
+//     for(let i = 0; i<arr.length; i++){
+//        res += Math.ceil(arr[i]/h)
+//     }
+//     return res;
+// }
+
+// function koko(arr,h){
+//     let low = 1
+//     let high = Math.max(...arr)
+
+//     while(low <= high){
+//         let mid = Math.floor((low+high)/2)
+//         let totalHrs = L(arr,mid)
+//         if(totalHrs === h){
+//             return mid ;
+//         }
+//         else if(totalHrs > h){
+//             low = mid +1
+//         }
+//         else{
+//             high = mid -1
+//         }
+//     }
+//     return -1;
+// }
+// console.log(koko([7,15,6,3],8))
+
+
+//M boquets
+//[7,7,7,7,13,11,12,7] , m=2, k=3
+// function L (arr,days,m,k){
+//     let count = 0, guldaste = 0
+//     for(let i = 0; i<arr.length ; i++){
+//         if(arr[i] <= days){
+//             count++
+//             if(count >= k){
+//                 guldaste++
+//                 count=0
+//             }
+//         }
+//         else count = 0
+//     }
+//     return guldaste 
+// }
+
+// function guldasta(arr,m,k){
+//     let low = Math.min(...arr)
+//     let high = Math.max(...arr)
+//     let n = arr.length
+//     if(n < m*k) return -1;
+
+//     while(low <= high){
+//         let mid = Math.floor((low+high)/2)
+//         if(L (arr,mid,m,k) == m){
+//             high = mid -1
+//         }
+//         else{
+//             low = mid +1
+//         }
+//     }
+//     return low;
+// }
+// console.log(guldasta([7,7,7,7,13,11,12,7],2,3))
+
+
+//[1,2,3,4,5], limit = 8
+//op = 3
+// function L(arr,k){
+//     let count = 0
+//     for(let i = 0; i<arr.length ; i++){
+//         count += Math.ceil(arr[i]/k)
+//     }
+//     return count;
+// }
+
+// function smallestDivisor (arr, limit){
+//     let low = Math.min(...arr)
+//     let high = Math.max(...arr)
+
+//     while(low <= high){
+//         let mid = Math.floor((low+high)/2)
+//         let threshold = L(arr,mid)
+
+//         if(threshold <= limit){
+//             high = mid -1
+//         }
+//         else{
+//             low = mid +1
+//         }
+//     }
+//     return low;
+// }
+// console.log(smallestDivisor([1,2,3,4,5],8))
+
+
+//aggresive cows
+//[0,3,4,7,10,9] , k = 4 //place 4 cows in arr
+//op = 3 //manimum maximum distace possible
+// function L(arr, distance,k){
+//     let countCows = 1, last = arr[0]
+//     for(let i = 0; i< arr.length; i++){
+//         if(arr[i] - last >= distance){
+//             countCows++
+//             last = arr[i]
+//         }
+//         if(countCows >= k) return true;
+//     }
+//     return false;
+// }
+
+// function cows(arr,k){
+//     arr.sort((a,b) => a-b)
+//     let n = arr.length
+//     let low = 1
+//     let high = arr[n-1]
+
+//     while(low <= high){
+//         let mid = Math.floor((low+high)/2)
+//         if(L (arr,mid,k)){
+//             low = mid +1
+//         }
+//         else{
+//             high - mid - 1
+//         }
+//     }
+//     return high;
+// }
+// console.log(cows([0,3,4,7,10,9],4))
+
+//finding kth element
+// function kth(arr,k){
+//     let low = 0
+//     let high = arr.length - 1
+
+//     while(low <= high){
+//         let mid = Math.floor((low+high)/2)
+//         let missingValues = arr[mid] - (mid+1)
+
+//         if(missingValues < k){
+//             low = mid + 1
+//         }
+//         else{
+//             high = mid - 1
+//         }
+//     }
+//     return high + k + 1
+// }
+// console.log(kth([2,3,4,7,11],5))
+
 
