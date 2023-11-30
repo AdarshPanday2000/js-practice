@@ -44,7 +44,6 @@ insertLast(data){
     } else{
         let node = new Node(data);
         let current,previous;
-
         current = this.head;
 
     }
@@ -115,13 +114,41 @@ insertLast(data){
 // list.add(4)
 // console.log(list)
 
-const ll = new LinkList();
-ll.insertFirst(100);
-ll.insertFirst(200)
-ll.insertFirst(300)
-ll.insertLast(400)
+// const ll = new LinkList();
+// ll.insertFirst(100);
+// ll.insertFirst(200)
+// ll.insertFirst(300)
+// ll.insertLast(400)
 
-//ll.removeAt(2)
-ll.printListData()
+// //ll.removeAt(2)
+// ll.printListData()
 
 //ll.getAt(1)
+
+// 1 => 2 => 3 => 4 => 5
+// 1 => 2 => 3 => 6 => 4 => 5
+//index = 3, val =6
+function addNode(head,val,position){
+    let newNode = new Node(val)
+    let curr = head
+
+    if(position === 0){
+        newNode.next = head
+        head = newNode
+        return head;
+    }
+
+    for(let i = 0; i < position-1; i++){
+        curr = curr.next
+    }
+    newNode.next = curr.next
+    curr.next = newNode
+
+    return head;
+}
+
+let head = new Node(1)
+head.next = new Node(2)
+head.next.next = new Node(3)
+
+console.log(addNode(head,6,0))

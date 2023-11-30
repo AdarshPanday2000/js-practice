@@ -155,3 +155,97 @@
 // myQueue.pop()
 // myQueue.peek()
 // console.log(myQueue)
+
+
+//next smallest element
+// function nextSmallest(arr){
+//     let n = arr.length
+//     let ans = []
+//     let stack = new Array(n).fill(-1)
+
+//     for(let i = n-1; i >= 0; i--){
+//         let curr = arr[i]
+//         while(stack[stack.length-1] >= curr){
+//             stack.pop()
+//         }
+
+//         //ans is stack ka top
+//         ans[i] = stack[stack.length-1]
+//         stack.push(curr)
+//     }
+//     return ans;
+// }
+// console.log(nextSmallest([2,3,1]))
+
+
+// function nextLarger(arr){
+//     let n = arr.length
+//     let ans = []
+//     let stack = new Array(n).fill(-1)
+
+//     for(let i = n-1; i >=0; i--){
+//         let curr = arr[i]
+//         while(stack[stack.length-1] <= curr){
+//             stack.pop()
+//         }
+//         ans[i] = stack[stack.length-1]
+//         stack.push(curr)
+//     }
+//     return ans;
+// }
+// console.log(nextLarger([3,4,5,1]))
+
+
+//largest area of histogram
+function largestArea(heights){
+    let n = heights.length
+    let next = nextSmallerElement(heights)
+    let prev = prevSmallerElement(heights)
+
+    let area = -Infinity
+    for(let i = 0; i<n; i++){
+        let l = heights[i]
+        
+        if(next[i] === -1){
+            next[i] = n;
+        }
+        let b = next[i]-prev[i]-1
+        let newArea = l * b
+        area = Math.max(area,newArea)
+    }
+    return area;
+}
+function nextSmallerElement(arr){
+    let n = arr.length
+    let ans = []
+    let stack = new Array(n).fill(-1)
+
+    for(let i = n-1; i >= 0; i--){
+        let curr = arr[i]
+        while(stack[stack.length-1] !== -1 && arr[stack[stack.length-1]] >= curr){
+            stack.pop()
+        }
+
+        ans[i] = stack[stack.length-1]
+        stack.push(i)
+    }
+    return ans;
+}
+function prevSmallerElement(arr){
+    let n = arr.length
+    let ans = []
+    let stack = new Array(n).fill(-1)
+
+    for(let i = 0; i<n; i++){
+        let curr = arr[i]
+        while(stack[stack.length-1] !== -1 && arr[stack[stack.length-1]] >= curr){
+            stack.pop()
+        }
+
+        ans[i] = stack[stack.length-1]
+        stack.push(i)
+    }
+    return ans;
+}
+
+console.log(largestArea([2,1,5,6,2,3]))

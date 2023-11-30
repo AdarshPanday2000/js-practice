@@ -1078,3 +1078,56 @@ function upperBound(arr,k){
 // console.log(kth([2,3,4,7,11],5))
 
 
+//largest ele in array
+//[1,2,3,4,5,6,8,9,7]
+// function largestEl(arr){
+//     let largest = arr[0]
+//     for(let i = 1 ; i< arr.length; i++){
+//         if(arr[i] > largest){
+//             largest = arr[i]
+//         }
+//     }
+//     return largest
+// }
+
+//find second largest
+//[1,2,3,4,5,6,8,9,7]
+// function secondLargest(arr){
+//     let largest = arr[0]
+//     let secondL = -Infinity
+//     for(let i = 1; i< arr.length; i++){
+//         if(arr[i] > largest){
+//             largest = secondL
+//             arr[i] = largest
+//         }
+//         else if(arr[i] < largest && arr[i] > secondL){
+//             secondL = arr[i]
+//         }
+//     }
+//     return secondL;
+// }
+
+//check if array is sorted
+// function isSorted(arr){
+//     for(let i = 1; i < arr.length; i++){
+//         if(arr[i] > arr[i-1]){
+        
+//         }
+//         else return false;
+//     }
+//     return true;
+// }
+// console.log(isSorted([1,2,3,4,5,6,1]))
+
+//remove duplicates
+function removeDuplicates(arr){
+    let  i = 0
+    for(let j = 1; j < arr.length; j++){
+        if(arr[j] !== arr[i]){
+            arr[i+1] = arr[j]
+            i++
+        }
+    }
+    return i+1;
+}
+console.log(removeDuplicates([1,1,2,2,3,3]))
