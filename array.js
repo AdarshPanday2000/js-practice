@@ -771,39 +771,39 @@
 
 
 //[0,1,2,4,5,8,9,10], k = 7 , arr[mid] >= k
-function lowerBound(arr,k){
-    let n = arr.length
-    let low = 0
-    let high = n-1
+// function lowerBound(arr,k){
+//     let n = arr.length
+//     let low = 0
+//     let high = n-1
 
-    while(low <= high){
-        let mid = Math.floor((low+high) / 2)
-        if(arr[mid] >= k){
-            high = mid -1
-        } 
-        else{
-            low = mid +1
-        }
-    }
-    return low;
-}
+//     while(low <= high){
+//         let mid = Math.floor((low+high) / 2)
+//         if(arr[mid] >= k){
+//             high = mid -1
+//         } 
+//         else{
+//             low = mid +1
+//         }
+//     }
+//     return low;
+// }
 
-function upperBound(arr,k){
-    let n = arr.length
-    let low = 0
-    let high = n-1
+// function upperBound(arr,k){
+//     let n = arr.length
+//     let low = 0
+//     let high = n-1
 
-    while(low <= high){
-        let mid = Math.floor((low+high) / 2)
-        if(arr[mid] > k){
-            high = mid -1
-        } 
-        else{
-            low = mid +1
-        }
-    }
-    return low;
-}
+//     while(low <= high){
+//         let mid = Math.floor((low+high) / 2)
+//         if(arr[mid] > k){
+//             high = mid -1
+//         } 
+//         else{
+//             low = mid +1
+//         }
+//     }
+//     return low;
+// }
 // console.log(lowerBound([0,1,2,4,5,8,9,10],8))
 // console.log(upperBound([0,1,2,4,5,8,9,10],8))
 
@@ -1120,14 +1120,415 @@ function upperBound(arr,k){
 // console.log(isSorted([1,2,3,4,5,6,1]))
 
 //remove duplicates
-function removeDuplicates(arr){
-    let  i = 0
-    for(let j = 1; j < arr.length; j++){
-        if(arr[j] !== arr[i]){
-            arr[i+1] = arr[j]
-            i++
-        }
-    }
-    return i+1;
+// function removeDuplicates(arr){
+//     let  i = 0
+//     for(let j = 1; j < arr.length; j++){
+//         if(arr[j] !== arr[i]){
+//             arr[i+1] = arr[j]
+//             i++
+//         }
+//     }
+//     return i+1;
+// }
+// console.log(removeDuplicates([1,1,2,2,3,3]))
+
+//two sum
+// function twoSum(arr,target){
+//     let n = arr.length-1
+//     let left = 0
+//     let right = n-1
+//     arr.sort((a,b) => a-b)
+
+//     while(left < right){
+//         let sum = arr[left] + arr[right]
+//         if(sum === target){
+//             return [left,right]
+//         }
+//         else if(sum < target){
+//             left++
+//         }
+//         else right++
+//     }
+//     return false;
+// }
+// console.log(twoSum([2,6,5,8,11],14))
+
+//sort colors
+//[0,1,2,0,1,2,0,1,2]
+// function sortColors(arr){
+//     let n = arr.length
+//     let count0 = 0
+//     let count1 = 0
+//     let count2 = 0
+
+//     for(let i = 0; i< n; i++){
+//         if(arr[i] === 0)count0++
+//         else if(arr[i] === 1)count1++
+//         else count2++
+//     }
+//     for(let i = 0; i< count0; i++){
+//         arr[i] = 0
+//     }
+//     for(let i = count1 ; i< count0+count1 ; i++){
+//         arr[i] = 1
+//     }
+//     for(let i = count0 + count1; i < n; i++){
+//         arr[i] = 2
+//     }
+//     return arr;
+// }
+// console.log(sortColors([0,1,2,0,1,2,0,1,2]))
+
+//majority element
+// function majorityElement(arr){
+//     let n = arr.length
+//     let hashArr = new Array (Math.max(...arr) + 1).fill(0)
+//     for(let i = 0 ; i < n; i++){
+//         hashArr[arr[i]]++
+//     }
+//     for(let i = 0; i < hashArr.length; i++){
+//         if(hashArr[i] > (n/2)){
+//             return i;
+//         }
+//     }
+// }
+// console.log(majorityElement([2,2,3,3,1,2,2]))
+
+//maximum subarray
+// function maximum(arr){
+//     let max = -Infinity
+//     let sum = 0
+//     for(let  i = 0; i < arr.length; i++){
+//         sum += arr[i]
+
+//         if(sum > max){
+//             max = sum
+//         }
+//         if(sum < 0){
+//             sum = 0
+//         }
+//     }
+//     return max; 
+// }
+// console.log(maximum([-2,1,-3,4,-1,2,1,-5,4]))
+
+//arrange el by sign
+// function arrange(arr){
+//     let ans = []
+//     let positiveIndex = 0
+//     let negativeIndex = 1
+
+//     for(let i = 0 ; i < arr.length ; i++){
+//         if(arr[i] > 0){
+//             ans[positiveIndex] = arr[i]
+//             positiveIndex += 2
+//         }
+//         else if(arr[i] < 0){
+//             ans[negativeIndex] = arr[i]
+//             negativeIndex += 2
+//         }
+//     }
+//     return ans;
+// }
+// console.log(arrange([3,1,-2,-5,2,-4]))
+
+//leaders in an array
+//[10,22,12,3,0,6]
+// function leader(arr){
+//     let n = arr.length
+//     let ans = []
+//     let max = -Infinity
+//     for(let i = n-1; i >= 0; i--){
+//         if(arr[i] > max){
+//             ans.push(arr[i])
+//         }
+//         max = Math.max(max, arr[i])
+//     }
+//     return ans;
+// }
+// console.log(leader([10,22,12,3,0,6]))
+
+//find first and last occurance
+//[2,8,8,8,8,8,11,13]
+// function firstOcc(arr,target){
+//     let n = arr.length
+//     let low = 0
+//     let high = n -1
+//     let first = -1
+
+//     while(low <= high){
+//         let mid = Math.floor((low+high)/2)
+
+//         if(arr[mid] >= target){
+//             first = mid
+//             high = mid - 1
+//         }
+//         else{
+//             low = mid + 1
+//         }
+//     }
+//     return first;
+// }
+
+// function lastOcc(arr,target){
+//     let n = arr.length
+//     let low = 0
+//     let high = n -1
+//     let last = -1
+
+//     while(low <= high){
+//         let mid = Math.floor((low+high)/2)
+
+//         if(arr[mid] > target){
+//             last = mid
+//             high = mid - 1
+//         }
+//         else{
+//             low = mid + 1
+//         }
+//     }
+//     return last;
+// }
+
+// function findLastFirst(arr,target){
+//     let left = firstOcc(arr,target)
+//     let right = lastOcc(arr,target)
+//     return [left , right-1]
+// }
+// console.log(findLastFirst([2,8,8,8,8,8,11,13],8))
+
+// function rotatedSorted(arr,target){
+//     let low = 0
+//     let high = arr.length -1
+
+//     while(low <= high){
+//         let mid = Math.floor((low+high)/2)
+
+//         if(arr[mid] === target){
+//             return mid
+//         }
+
+//         //left sorted
+//         if(arr[low] <= arr[mid]){
+//             if(arr[low] <= target && target <= arr[mid]){
+//                 high = mid - 1
+//             }
+//             else{
+//                 low = mid + 1
+//             }
+//         }
+//         //right sorted
+//         else{
+//             if(arr[mid] <= target && target <= arr[high]){
+//                 low = mid + 1
+//             }
+//             else{
+//                 high = mid -1
+//             }
+//         }
+//     }
+// }
+// console.log(rotatedSorted([7,8,9,1,2,3,4,5,6],1))
+
+// function findMin(arr){
+//     let n = arr.length
+//     let low = 0
+//     let high = n-1
+//     let min = Infinity
+
+//     while(low <= high){
+//         let mid = Math.floor((low+high)/2)
+
+//         if(arr[low] <= arr[mid]){
+//             min = Math.min(min,arr[low])
+//             low = mid + 1
+//         }
+//         else{
+//             min = Math.min(min,arr[mid])
+//             high = mid - 1
+//         }
+//     }
+//     return min;
+// }
+// console.log(findMin([3,4,5,1,2]))
+
+// function abc(arr){
+//     let low = 0
+//     let high = arr.length - 1
+//     let ans = -Infinity
+//     let index = -1
+//     while(low <= high){
+//         let mid = Math.floor((low+high)/2)
+
+//         if(arr[low] <= arr[mid]){
+//            if(arr[low] < ans){
+//             index = low
+//             ans = arr[low]
+//            }
+//            low = mid + 1
+//         }
+
+//         else{
+//             if(arr[mid] <= arr[high])
+//         }
+//     }
+// }
+
+// function peakElement(arr){
+//     let n = arr.length
+//     if(n == 1) return 0
+//     if(arr[0] > arr[1]) return 0
+//     if(arr[n-1] > arr[n-2]) return n-1
+
+//     let low = 1
+//     let high = n-2
+//     while(low <= high){
+//         let mid = Math.floor((low+high)/ 2)
+
+//         if(arr[mid] > arr[mid-1] && arr[mid] > arr[mid+1]){
+//             return mid
+//         }
+//         else if(arr[mid] > arr[mid-1]){
+//             low = mid +1
+//         }
+//         else{
+//             high = mid - 1
+//         }
+//     }
+// }
+// console.log(peakElement([1,2,3,4,5,6,7,5,1]))
+
+// function sqrt(n){
+//     let low = 0
+//     let high = n
+//     let ans = 1
+
+//     while(low <= high){
+//         let mid = Math.floor((low+high)/2)
+
+//         if((mid * mid) <= n){
+//             ans = mid
+//             low = mid + 1
+//         }
+//         else{
+//             high = mid - 1
+//         }
+//     }
+//     return ans;
+// }
+
+// function selectionSort(arr){
+//     let n = arr.length
+//     for(let  i = 0; i <= n-2; i++){
+//         let min = i
+//         for(let j = i; j <= n-1; j++){
+//             if(arr[j] < arr[min]){
+//                 min = j
+//             }
+//             [arr[min], arr[i]] = [arr[i], arr[min]]
+//         }
+//     }
+//     return arr;
+// }
+// console.log(selectionSort([13,46,24,52,20,9]))
+
+
+// function bubbleSort(arr){
+//     let n = arr.length
+//     for(let i = n - 1; i >= 1; i--){
+//         for(let j = 0; j <= i-1; j++){
+//             if(arr[j] > arr[j+1]){
+//                 [arr[j], arr[j+1]] = [arr[j+1], arr[j]]
+//             }
+//         }
+//     }
+//     return arr;
+// }
+// console.log(bubbleSort([13,46,24,52,20,9]))
+
+// function banana(arr,kela){
+//     let n = arr.length
+//     let hourCount = 0
+//     for(let i = 0; i < n; i++){
+//         hourCount += Math.ceil(arr[i]/kela)
+//     }
+//     return hourCount;
+// }
+
+// function koko(arr,hrs){
+//     let n = arr.length
+//     let low = 1
+//     let high = Math.max(...arr)
+
+//     while(low <= high){
+// //         let mid = Math.floor((low+high)/2)
+// //         let count = banana(arr,mid)
+
+// //         if(count <= hrs){
+// //             high = mid - 1
+// //         }
+// //         else{
+// //             low = mid + 1
+// //         }
+// //     }
+// //     return low;
+// // }
+// // console.log(koko([7,15,6,3], 8))
+
+// //madam
+// function palindrome(str){
+//     let n = str.length
+//     let s = 0
+//     let e = n -1
+//     let string = str.toLowerCase()
+
+//     while(s <= e){
+//         if(string[s] == string[e]){
+//             s++
+//             e--
+//         }
+//         else{
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+
+// console.log(palindrome('madam'))
+// console.log(palindrome('adasd'))
+
+// //array = [1,2,3,4,6,7,8,4,5,3]
+// // function secondLargest(arr){
+// //     let largest = arr[0]
+// //     let secondL = -Infinity
+
+// //     for(let i = 1 ; i < arr.length; i++){
+// //         if(arr[i] > largest){
+// //             secondL = largest
+// //             largest = arr[i]
+// //         }
+// //         else if(arr[i] < largest && arr[i] > secondL){
+// //             secondL = arr[i]
+// //         }
+// //     } 
+// //     return secondL;
+// // }
+// // console.log(secondLargest([1,2,3,4,6,5]))
+
+
+// let arr = [1,2,3,4,5,6,7]
+
+// function double(arr){
+//    let doubleArr =  arr.map(doub => {return doub*doub})
+//    return doubleArr
+// }
+// console.log(double(arr))
+
+function sum(a,b){
+    return a+b
 }
-console.log(removeDuplicates([1,1,2,2,3,3]))
+let sum2 = sum
+let c = 4
+let d = 8
+
+console.log(sum2(c,d))
