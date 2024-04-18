@@ -305,4 +305,152 @@
 // console.log(rangePalindrome(10,50))
 
 
-// 16- 
+// 16- check prime number
+// function primeChecker(num){
+//     for(let i = 2 ; i < num ; i++){
+//         if(num % i == 0){
+//             return false
+//         }
+//     }
+//     return true
+// }
+// console.log(primeChecker(11))
+
+
+// 17- check prime number in given range
+// min = 10 , max =16
+// function primeInRange(min, max){
+//     let res = []
+//     for(let i = min; i <= max; i++){
+//         if(primeCheck(i) == true){
+//             res.push(i)
+//         }
+//     }
+//     return res;
+// }
+
+// function primeCheck(num){
+//     for(let i = 2; i < num; i++){
+//         if(num % i == 0){
+//             return false
+//         }
+//     }
+//     return true;
+// }
+// console.log(primeInRange(10,16))
+
+
+// 18 - armstrong number
+// function isArmstroNumbengr(num) {
+//     // Convert the number to a string to get the length (number of digits)
+//     let numStr = String(num);
+//     let numDigits = numStr.length;
+
+//     // Initialize sum to 0
+//     let sum = 0;
+
+//     // Loop through each digit of the number
+//     for (let i = 0; i < numDigits; i++) {
+//         // Get the current digit by converting the character to a number
+//         let digit = Number(numStr[i]);
+        
+//         // Add the digit raised to the power of the number of digits to the sum
+//       sum += digit ** numDigits;
+//     }
+
+//     // Check if the sum equals the original number
+//     return sum === num;
+// }
+
+// console.log(isArmstroNumbengr(371))
+
+
+// 19 - check perfect number
+// perfect number = sum of its proper divisors 
+// function perfectNum(num){
+//     let sum = 0
+//     for(let  i = 1; i <= num-1 ; i++){
+//         if(num % i == 0){
+//             sum += i
+//         }
+//     }
+//     return sum === num;
+// }
+// console.log(perfectNum(6))
+
+
+// 20- even /odd
+// function checkEvenOdd(num){
+//     if(num % 2 == 0){
+//         return (`Even`)
+//     }
+//     else return ('Odd')
+// }
+// console.log(checkEvenOdd(5))
+
+
+// 21 - check wheather a given number is positive or negative
+// function check(num){
+//     if(num > 0){
+//         return ('Positive')
+//     }
+//     else return ('neg')
+// }
+// console.log(check(1))
+
+
+// 22- find sum of N natural numbers
+// function prefixSum(num){
+//     let sum = 0
+//     for(let i = 0; i <= num ; i++){
+//         sum = sum + i
+//     }
+//     return sum;
+// }
+// console.log(prefixSum(6))
+
+// 23- find sum of AP
+// n = number of terms , a = first term , d = diffrence to next number
+// function AP(n,a,d){
+//     let sum = 0
+//     for(let i = 1; i <= n ; i++){
+//         sum = sum + a
+//         a = a + d;
+//     }
+//     return sum
+// }
+// console.log(AP(4,2,2))
+
+
+// 24 - greatest of three numbers
+// function greaetest(a,b,c){
+//    return Math.max(a,b,c)
+// }
+// console.log(greaetest(1,2,3))
+
+// 25 - reverse a number  / 427 -> 724
+// function reverseNumber(num){
+//     let d;
+//     let res = 0
+//     while(num != 0){
+//         d = num % 10
+//         res = res*10 + d
+//         num = Math.floor(num/10)
+//     }
+//     return res;
+// }
+// console.log(reverseNumber(427))
+
+// 26- fibbonachi
+// function fibonacchi(num){
+//     let prev= 0
+//     let next = 1
+//     let curr;
+//     for(let i = 2 ; i <= num; i++){
+//         curr = next+prev
+//         prev = next
+//         next = curr
+//     }
+//     return curr
+// }
+// console.log(fibonacchi(8))
