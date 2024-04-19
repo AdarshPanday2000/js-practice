@@ -454,3 +454,97 @@
 //     return curr
 // }
 // console.log(fibonacchi(8))
+
+
+// 27- palindrome string
+// function palindromeString(str){
+//     let n = str.length
+//     let start = 0
+//     let end = n-1
+//     while(start < end){
+//         if(str[start] != str[end]){
+//             return false
+//         }
+//         start++
+//         end--
+//     }
+//     return true;
+// }
+// console.log(palindromeString('MADAMM'))
+
+
+// 28 - count vowel and const and whitespaces
+// function count(str){
+//     let vowel = 0;
+//     let consonant = 0;
+//     let whiteSpace = 0;
+//     for(let i = 0 ; i < str.length; i++){
+//         if(str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u'){
+//             vowel++
+//         }
+//         else if(str[i] == ' '){
+//             whiteSpace++
+//         }
+//         else consonant++
+//     }
+//     return (`Vowel : ${vowel}, consonant : ${consonant}, whiteSpaces : ${whiteSpace}`);
+// }
+// console.log(count('adarsh is a boy'))
+
+
+// 29 - get ASCII VALUE OF CHARACTER
+// function getAscii(str){
+//     return str.charCodeAt(1)
+// }
+// console.log(getAscii('Adarsh'))
+
+// 30 - remove vowels and return a new string
+// function removeVowels(str){
+//     let res = ''
+//     for(let i = 0 ; i < str.length; i++){
+//         if(str[i] !== 'a' && str[i] !== 'e' && str[i] !== 'i' && str[i] !== 'o' && str[i] !== 'u'){
+//             res += str[i]
+//         }
+//     }
+//     return res;
+// }
+// console.log(removeVowels('adarsh is a bad boy'))
+
+
+// 31- remove spaces from string
+// function removeSpace(str){
+//     let res = '';
+//     for(let i = 0 ; i < str.length; i++){
+//         if(str[i] !== ' '){
+//             res += str[i]
+//         }
+//     }
+//     return res;
+// }
+// console.log(removeSpace('hey hi hello'))
+
+
+// 32 - remove all cheez from string except alphabets
+// function removeChars(str){
+//     let res = ''
+//     for(let i = 0 ; i < str.length ; i++){
+//         let charCode = str.charCodeAt(i)
+
+//         if((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122)){
+//             res += str[i]
+//         }
+//     }
+//     return res;
+// }
+// console.log(removeChars('123@ada$%rsh'))
+
+
+// 33- reverse a string
+// function reverseString(str){
+//    let res = ''
+//    for(let i = str.length - 1 ; i >= 0 ; i--){
+//     res += str[i]
+//    }
+//    return res;
+// }
+// console.log(reverseString('adarsh is a boy'))
