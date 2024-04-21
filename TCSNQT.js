@@ -548,3 +548,103 @@
 //    return res;
 // }
 // console.log(reverseString('adarsh is a boy'))
+
+
+//34 - remove brackets from a string
+// function removeBrackets(str){
+//     let res = ''
+//     for(let i = 0; i < str.length ; i++){
+//         if(str[i] !== '(' && str[i] !== ')'){
+//             res += str[i]
+//         }
+//     }
+//     return res;
+// }
+// console.log(removeBrackets('(a+b))'))
+
+
+// 35- Capitalize first and last character of each word of a string
+// function capsFirstLast(str){
+//     let words = str.split(' ');
+//     // Iterate over each word in the array
+//     for (let i = 0; i < words.length; i++) {
+//         let word = words[i];
+
+//         // Check if the word has more than one character
+//         if (word.length > 1) {
+//             // Capitalize the first character
+//             words[i] = word[0].toUpperCase() + word.slice(1, -1) + word[word.length - 1].toUpperCase();
+//         } else {
+//             // If the word has only one character, capitalize it
+//             words[i] = word.toUpperCase();
+//         }
+//     }
+
+//     // Join the words back into a single string
+//     return words.join(' ');
+// }
+// console.log(capsFirstLast('take you forward'))
+
+
+// 36- count frequency of characters in string
+// function countFreq(str){
+//     let frequency = {}
+
+//     for(let i of str){
+//         // if str is present add 1 otherwise start count
+//         frequency[i] = (frequency[i] || 0) + 1
+//     }
+//     return frequency;
+// }
+// console.log(countFreq('adarsh pandey'))
+
+
+// 37- Find Non-repeating characters of a String
+// function nonRep(str){
+//     frequency = {}
+
+//     for(let i of str){
+//         frequency[i] = (frequency[i] || 0 ) + 1
+//     }
+//     // filter character with freq 1
+//     let nonRepeatingChar = Object.keys(frequency).filter(i => frequency[i] == 1)
+//     return nonRepeatingChar 
+// }
+// console.log(nonRep('yahoo'))
+
+
+//38 - find anagram of string (permutation)
+// function anagram(str1, str2){
+//     let string1 = str1.split('').sort((a,b) => a-b)
+//     let string2 = str2.split('').sort((a,b) => a-b)
+
+//     for(let i = 0 ; i < string1.length; i++){
+//         if(string1[i] !== string2[i]){
+//             return false
+//         }
+//     }
+//     return true
+// }
+// console.log(anagram('CAT', 'ACT'))
+
+
+// 39 - maximum occuirng character in a string
+// function countMax(str){
+//     let freq = {}
+
+//     for(let i of str){
+//         freq[i] = (freq[i] || 0 ) + 1
+//     }
+//     let maxFreq = 0
+//     let maxChar = ''
+
+//     // for in loop for object
+//     for(let i in freq){
+//         if(freq[i] > maxFreq){
+//             maxFreq = freq[i]
+//             maxChar = i
+//         }
+//     }
+//     return maxChar
+// }
+// console.log(countMax('adarsh'))
