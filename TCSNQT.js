@@ -648,3 +648,87 @@
 //     return maxChar
 // }
 // console.log(countMax('adarsh'))
+
+
+// remove duplicate chars
+// function removeDuplicates(str){
+//     let encounterChars = {}
+//     let res = ''
+//     for(let i of str){
+//         if(!encounterChars[i]){
+//             encounterChars[i] = true
+//             res += i
+//         }
+//     }
+//     return res;
+// }
+// console.log(removeDuplicates('adarsh'))
+
+
+// function printDuplicates(str) {
+//     // Create an object to store the frequency of each character
+//     let frequency = {};
+
+//     // Iterate over each character of the string and calculate its frequency
+//     for (let char of str) {
+//         // If the character is not already in the frequency object, initialize its count to 1
+//         // Otherwise, increment its count by 1
+//         frequency[char] = (frequency[char] || 0) + 1;
+//     }
+
+//     // Iterate over the keys (characters) of the frequency object
+//     for (let char in frequency) {
+//         // If the frequency of the current character is greater than 1, print it
+//         if (frequency[char] > 1) {
+//             return (`character : ${char} , count : ${frequency[char]}`)
+//         }
+//     }
+// }
+// console.log(printDuplicates('adarsh is a good boy'))
+
+
+// 40- find largest word in string
+// function largestWord(str){
+//     let words = str.split(' ')
+//     let count = 0
+//     let res = ''
+//     for(let i = 0 ; i < words.length ; i++){
+//        if(words[i].length > count){
+//         count = words[i].length
+//         res += words[i]
+//        } 
+//     }
+//     return res;
+// }
+// console.log(largestWord('Microsoft team'))
+
+
+// 41- Change case of each character in a string
+// function changeCase(str){
+//     let res = ''
+//     for(let i = 0; i < str.length; i++){
+//         if(str[i] == str[i].toUpperCase()){
+//             res += str[i].toLowerCase()
+//         }
+//         else{
+//             res += str[i].toUpperCase()
+//         }
+//     }
+//     return res;
+// }
+// console.log(changeCase('AdarSH is LUci'))
+
+
+// 42- concat two strings
+// function addTwoStr(str1, str2){
+//     return str1.concat(str2)
+// }
+// console.log(addTwoStr('adarsh', 'pandey'))
+
+
+// 43- reverse words in a string
+// function reverseWord(str){
+//     let arrayStr = str.split(' ')
+//     return arrayStr.reverse().join(' ')
+// }
+// console.log(reverseWord('this is an amazing code'))
