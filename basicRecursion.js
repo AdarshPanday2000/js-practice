@@ -324,12 +324,54 @@
 // console.log(subsetsWithDup([1,2,2]))
 
 
-function foo() {
-    let x = (y = 0);
-    x++;
-    y++;
-    return x;
-  }
-  console.log(foo(), typeof x, typeof y);
-  console.log(typeof NaN)
+// QUES- sort a given array 
+// function sort (arr,size){
+//   if(size <= 1){
+//     return true
+//   }
+//   if(arr[0] > arr[1]){
+//     return false
+//   }
+//   else{
+//     let sorted = sort(arr.slice(1), size-1)
+//     return sorted;
+//   }
+// }
+// console.log(sort([1,2,4,5],4))
 
+
+// QUES - find a element in an array
+// function find(arr,target){
+//   if(arr.length == 0){
+//     return 0;
+//   }
+
+//   if(arr[0] == target){
+//     return true;
+//   }
+
+//   return find(arr.slice(1),target)
+// }
+// console.log(find([1,2,3,4,5,6], 5))
+
+
+//  ques  -  Find if a target is present or not in an array . using binary search in recursion
+// function binarySearch(arr,target,start = 0,end = arr.length-1){
+
+//   //base case
+//   if(start > end){
+//     return false;
+//   }
+
+//   let mid = Math.floor((start+end)/2)
+
+//   if(arr[mid] == target){
+//     return true;
+//   }
+
+//   if(target < arr[mid]){
+//     return binarySearch(arr, target, start, mid-1)
+//   }
+//   else return binarySearch(arr,target,mid+1, end);
+// }
+// console.log(binarySearch([1,2,3,4,5],4))
